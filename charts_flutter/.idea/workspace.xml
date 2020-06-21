@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62673d75-b3d1-4a12-bf9b-fd8832fbc7f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/util/monotex.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../charts_common/lib/src/chart/common/chart_canvas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../charts_common/lib/src/chart/common/chart_canvas.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../charts_common/lib/src/chart/line/line_renderer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../charts_common/lib/src/chart/line/line_renderer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../charts_common/lib/src/chart/line/line_renderer_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../charts_common/lib/src/chart/line/line_renderer_config.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/canvas/line_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/canvas/line_painter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/chart_canvas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/chart_canvas.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/canvas/line_painter.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="330">
+              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
               <folding>
                 <element signature="e#0#8853#0" expanded="true" />
               </folding>
@@ -86,8 +80,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1910" />
-    <option name="height" value="1038" />
+    <option name="width" value="959" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -168,7 +162,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1040" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -225,8 +218,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/canvas/line_painter.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="330">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
           <folding>
             <element signature="e#0#8853#0" expanded="true" />
           </folding>

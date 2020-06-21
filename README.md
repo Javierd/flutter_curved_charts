@@ -27,3 +27,19 @@ All charts packages are licensed under the Apache 2 license, see the
 ## Development
 This project is developed internally at Google and published for external
 consumption, external contributions unfortunately cannot be taken at this time.
+
+Modified by @Javierd to add support for curved line charts. I'll try to keep this updated with the changes made by google.
+
+```dart
+import 'package:charts_flutter/flutter.dart' as charts;
+....
+charts.TimeSeriesChart(
+    data,
+    defaultRenderer: charts.LineRendererConfig<DateTime>(
+        curved: true,
+    ),
+    animate: true,
+),
+....
+```
+
