@@ -69,6 +69,9 @@ class LineRendererConfig<D> extends LayoutViewConfig
 
   /// Whether lines should have round end caps, or square if false.
   final bool roundEndCaps;
+  
+  /// Whether the drawn line should be curved or straight lines
+  final bool curved;
 
   LineRendererConfig(
       {this.customRendererId,
@@ -79,6 +82,7 @@ class LineRendererConfig<D> extends LayoutViewConfig
       this.includeLine = true,
       this.includePoints = false,
       this.includeArea = false,
+      this.curved = false,
       this.layoutPaintOrder = LayoutViewPaintOrder.line,
       this.areaOpacity = 0.1,
       this.roundEndCaps = false,

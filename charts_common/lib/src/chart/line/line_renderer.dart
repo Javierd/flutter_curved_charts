@@ -155,6 +155,7 @@ class LineRenderer<D> extends BaseCartesianRenderer<D> {
         final strokeWidthPx = strokeWidthPxFn != null
             ? strokeWidthPxFn(index).toDouble()
             : config.strokeWidthPx;
+        final curved = config.curved;
 
         // Create a style key for this datum, and then compare it to the
         // previous datum.
@@ -191,7 +192,8 @@ class LineRenderer<D> extends BaseCartesianRenderer<D> {
             ..domainExtent = _Range<D>(domain, domain)
             ..strokeWidthPx = strokeWidthPx
             ..styleKey = styleKey
-            ..roundEndCaps = config.roundEndCaps;
+            ..roundEndCaps = config.roundEndCaps
+            ..curved = curved;
 
           styleSegments.add(currentDetails);
           usedKeys.add(styleKey);
@@ -576,6 +578,7 @@ class LineRenderer<D> extends BaseCartesianRenderer<D> {
     final strokeWidthPx = styleSegment.strokeWidthPx;
     final styleKey = styleSegment.styleKey;
     final roundEndCaps = styleSegment.roundEndCaps;
+    final curved = styleSegment.curved;
 
     // Get a list of all positioned points for this series.
     final pointList = _createPointListForSeries(series, initializeFromZero);
@@ -611,7 +614,9 @@ class LineRenderer<D> extends BaseCartesianRenderer<D> {
         ..positionExtent = positionExtent
         ..strokeWidthPx = strokeWidthPx
         ..styleKey = lineStyleKey
-        ..roundEndCaps = roundEndCaps);
+        ..roundEndCaps = roundEndCaps
+        ..curved = curved  
+      );
     }
 
     // Get the area elements we are going to set up.
@@ -978,12 +983,14 @@ class LineRenderer<D> extends BaseCartesianRenderer<D> {
             .forEach((_LineRendererElement line) {
           if (line != null) {
             canvas.drawLine(
-                clipBounds: _getClipBoundsForExtent(line.positionExtent),
-                dashPattern: line.dashPattern,
-                points: line.points,
-                stroke: line.color,
-                strokeWidthPx: line.strokeWidthPx,
-                roundEndCaps: line.roundEndCaps);
+              clipBounds: _getClipBoundsForExtent(line.positionExtent),
+              dashPattern: line.dashPattern,
+              points: line.points,
+              stroke: line.color,
+              strokeWidthPx: line.strokeWidthPx,
+              roundEndCaps: line.roundEndCaps,
+              curved: line.curved
+            );
           }
         });
       }
@@ -1173,6 +1180,8 @@ class _LineRendererElement<D> {
   double strokeWidthPx;
   String styleKey;
   bool roundEndCaps;
+  bool curved;
+  
 
   _LineRendererElement<D> clone() {
     return _LineRendererElement<D>()
@@ -1185,7 +1194,9 @@ class _LineRendererElement<D> {
       ..positionExtent = positionExtent
       ..strokeWidthPx = strokeWidthPx
       ..styleKey = styleKey
-      ..roundEndCaps = roundEndCaps;
+      ..roundEndCaps = roundEndCaps
+      ..curved = curved
+    ;
   }
 
   void updateAnimationPercent(_LineRendererElement previous,

@@ -76,18 +76,21 @@ class ChartCanvas implements common.ChartCanvas {
       common.Color stroke,
       bool roundEndCaps,
       double strokeWidthPx,
-      List<int> dashPattern}) {
+      List<int> dashPattern,
+      bool curved}) {
     _linePainter ??= new LinePainter();
     _linePainter.draw(
-        canvas: canvas,
-        paint: _paint,
-        points: points,
-        clipBounds: clipBounds,
-        fill: fill,
-        stroke: stroke,
-        roundEndCaps: roundEndCaps,
-        strokeWidthPx: strokeWidthPx,
-        dashPattern: dashPattern);
+      canvas: canvas,
+      paint: _paint,
+      points: points,
+      clipBounds: clipBounds,
+      fill: fill,
+      stroke: stroke,
+      roundEndCaps: roundEndCaps,
+      strokeWidthPx: strokeWidthPx,
+      dashPattern: dashPattern,
+      curved: curved,
+    );
   }
 
   @override
