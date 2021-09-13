@@ -23,7 +23,7 @@ class MonotoneX {
     double p = (s0 * h1 + s1 * h0) / (h0 + h1);
     var source = [s0.abs(), s1.abs(), 0.5 * p.abs()];
     source.sort();
-    return (_sign(s0) + _sign(s1)) * source.first ?? 0;
+    return (_sign(s0) + _sign(s1)) * source.first;
   }
 
   // According to https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Representations
@@ -36,18 +36,18 @@ class MonotoneX {
     return path;
   }
 
-  static Path addCurve(Path path, List<Point> points, [bool reversed = false]) {
-    var targetPoints = List<Point>();
+  static Path addCurve(Path? path, List<Point> points, [bool reversed = false]) {
+    List<Point> targetPoints = [];
     targetPoints.addAll(points);
     targetPoints.add(Point(
         points[points.length - 1].x * 2, points[points.length - 1].y * 2));
-    double x0, y0, x1, y1, t0;
+    double x0=0, y0=0, x1=0, y1=0, t0=0;
     if (path == null) {
       path = Path();
     }
     List<List<double>> arr = [];
     for (int i = 0; i < targetPoints.length; i++) {
-      double t1;
+      double t1 = 0;
       double x = targetPoints[i].x.toDouble();
       double y = targetPoints[i].y.toDouble();
       if (x == x1 && y == y1) continue;
@@ -72,11 +72,11 @@ class MonotoneX {
     }
     if (reversed) {
       arr.reversed.forEach((f){
-        _point(path, f[2], f[3], f[0], f[1], f[5], f[4]);
+        _point(path!, f[2], f[3], f[0], f[1], f[5], f[4]);
       });
     } else {
       arr.forEach((f){
-        _point(path, f[0], f[1], f[2], f[3], f[4], f[5]);
+        _point(path!, f[0], f[1], f[2], f[3], f[4], f[5]);
       });
     }
     return path;
